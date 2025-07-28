@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="chatbot/chatbot.css">
+
+  <style>
+    /* Chatbot styles */
+    .chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: white;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chat-header {
+      background-color: #06C167;
+      color: white;
+      padding: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .chat-body {
+      flex-grow: 1;
+      padding: 10px;
+      overflow-y: auto;
+      max-height: 300px;
+    }
+
+    .chat-body .bot-message,
+    .chat-body .user-message {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 10px;
+      max-width: 80%;
+      word-wrap: break-word;
+    }
+
+    .chat-body .bot-message {
+      background-color: #f0f0f0;
+      align-self: flex-start;
+    }
+
+    .chat-body .user-message {
+      background-color: #06C167;
+      color: white;
+      align-self: flex-end;
+    }
+
+    .chat-input {
+      display: flex;
+      padding: 10px;
+      border-top: 1px solid #ccc;
+    }
+
+    .chat-input input {
+      flex-grow: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    .chat-input button {
+      background-color: #06C167;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin-left: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .chat-input button:hover {
+      background-color: #05a157;
+    }
+
+    /* Help & FAQs Section Styling */
+.help {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  margin-top: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.help p {
+  font-size: 23px;
+  text-align: center;
+  padding: 10px;
+  color: #333;
+}
+
+.help label {
+  font-size: 18px;
+  margin-bottom: 10px;
+  display: inline-block;
+  color: #333;
+}
+
+.help select {
+  font-size: 16px;
+  padding: 8px;
+  width: 100%;
+  max-width: 500px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  background-color: #fff;
+}
+
+.help select:hover {
+  border-color: #06C167;
+}
+
+.help select:focus {
+  border-color: #06C167;
+  box-shadow: 0 0 5px rgba(6, 194, 103, 0.5);
+}
+
+#faqAnswer {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  display: none;
+  border: 1px solid #ccc;
+}
+
+#faqAnswer h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+#faqAnswer p {
+  font-size: 16px;
+  color: #555;
+}
+
+#faqAnswer img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">Food <b style="color: #06C167;">Donate</b></div>
+    <div class="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="profile.php">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    hamburger.onclick = function () {
+      const navBar = document.querySelector(".nav-bar");
+      navBar.classList.toggle("active");
+    }
+  </script>
+
+  <section class="cover"></section>
+  <p class="heading" style="margin: 20px;">Contact Us</p>
+
+  <div class="contact-form">
+    <form action="feedback.php" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="feedback">Feedback:</label><br>
+      <textarea id="feedback" name="feedback" rows="2" cols="40" required></textarea><br><br>
+
+      <input type="submit" value="Send" name="send">
+    </form>
+  </div>
+  <div class="contact-info" style="padding: 10px;">
+    <p>Email: fooddonate@gmail.com</p>
+    <p>Phone: 91 00000 00000</p>
+    <p>Address: SJC</p>
+  </div>
+
+<!-- Help & FAQs Section -->
+<div class="help">
+  <p style="font-size: 23px; text-align: center; padding: 10px;">Help & FAQs?</p>
+
+  <label for="faqDropdown" style="font-size: 18px;">Select a question:</label>
+  <select id="faqDropdown" onchange="showAnswer()">
+    <option value="">-- Select a question --</option>
+    <option value="donate">How to donate food?</option>
+    <option value="used">How will my donation be used?</option>
+    <option value="expiration">What should I do if my food donation is near or past its expiration date?</option>
+  </select>
+
+  <div id="faqAnswer" style="padding: 20px; margin-top: 10px; display: none; background-color: #f9f9f9; border-radius: 5px;">
+    <!-- The answer content will be displayed here -->
+  </div>
+</div>
+
+<script>
+  // Function to display the answer based on the selected question
+  function showAnswer() {
+    const faqDropdown = document.getElementById("faqDropdown");
+    const faqAnswer = document.getElementById("faqAnswer");
+    const selectedValue = faqDropdown.value;
+
+    // Hide the answer initially
+    faqAnswer.style.display = "none";
+    
+    // Display the appropriate answer based on the selected option
+    if (selectedValue === "donate") {
+      faqAnswer.innerHTML = `
+        <h3>How to donate food?</h3>
+        <p>1) Click on <a href="fooddonateform.php">donate</a> on the home page.</p>
+        <p>2) Fill in the details.</p>
+        <p>3) Click on submit.</p>
+        <img src="img/mobile.jpg" alt="Donation Process" width="100%">
+      `;
+      faqAnswer.style.display = "block"; // Show the answer
+    } else if (selectedValue === "used") {
+      faqAnswer.innerHTML = `
+        <h3>How will my donation be used?</h3>
+        <p>Your donation will be used to support our mission and various programs and initiatives that we have in place. Your donation will help us continue providing assistance and support to those in need. You can find more information about our programs and initiatives on our website. If you have any specific questions or concerns, feel free to contact us.</p>
+      `;
+      faqAnswer.style.display = "block"; // Show the answer
+    } else if (selectedValue === "expiration") {
+      faqAnswer.innerHTML = `
+        <h3>What should I do if my food donation is near or past its expiration date?</h3>
+        <p>We appreciate your willingness to donate, but to ensure the safety of our clients, we can't accept food that is near or past its expiration date. We recommend checking expiration dates before making a donation or contacting us for further guidance.</p>
+      `;
+      faqAnswer.style.display = "block"; // Show the answer
+    }
+  }
+</script>
+
+
+  <!-- Chatbot Section -->
+  <div class="chatbot">
+    <div class="chat-header">Chatbot</div>
+    <div class="chat-body" id="chatBody">
+      <div class="bot-message">Hello! How can I help you today?</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Type your message here...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    // Chatbot responses
+    const botResponses = {
+      phrases: {
+        "how to donate": "You can donate by visiting our website home page and click 'DONATE FOOD' button and fill the basic details. After filling the form click the 'SUBMIT'o button below. ",
+        
+      },
+      keywords: {
+        hello: "Hi there! How can I assist you?",
+        help: "I'm here to help! Ask me anything.",
+        bye: "Goodbye! Have a great day!",
+        donate: "You can donate by visiting our website or contacting us directly!",
+      },
+      default: "I'm not sure how to respond to that. Could you rephrase?",
+    };
+
+    // Function to send a message
+    function sendMessage() {
+      const userInput = document.getElementById("userInput").value.trim();
+      if (userInput === "") return;
+
+      // Display user message
+      displayMessage(userInput, "user-message");
+
+      // Get bot response
+      const botReply = getBotResponse(userInput.toLowerCase());
+      setTimeout(() => displayMessage(botReply, "bot-message"), 500);
+
+      // Clear input field
+      document.getElementById("userInput").value = "";
+    }
+
+    // Function to display a message in the chat body
+    function displayMessage(message, className) {
+      const chatBody = document.getElementById("chatBody");
+      const messageDiv = document.createElement("div");
+      messageDiv.className = className;
+      messageDiv.textContent = message;
+      chatBody.appendChild(messageDiv);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    // Function to get bot response
+    function getBotResponse(input) {
+      if (botResponses.phrases[input]) {
+        return botResponses.phrases[input];
+      }
+
+      const words = input.split(" ");
+      for (const word of words) {
+        if (botResponses.keywords[word]) {
+          return botResponses.keywords[word];
+        }
+      }
+
+      return botResponses.default;
+    }
+
+    // Listen for Enter key press
+    document.getElementById("userInput").addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        sendMessage();
+      }
+    });
+
+    // Accordion functionality
+    const acc = document.getElementsByClassName("accordion");
+    for (let i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>
