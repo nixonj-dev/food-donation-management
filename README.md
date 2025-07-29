@@ -34,4 +34,4 @@ _Add screenshots of your web pages here (index page, donor form, NGO dashboard, 
 ## 🔧 Setup Instructions
 1. Clone the repo:
    ```bash
-   [git clone https://github.com/yourusername/food-donation-management.git](https://github.com/nixonj-dev/food-donation-management.git)
+   (https://github.com/nixonj-dev/food-donation-management.git)
