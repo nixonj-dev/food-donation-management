@@ -1,36 +1,37 @@
+# 🍲 Food Donation Management System
 
+This project is a web-based platform that connects food donors with NGOs and delivery personnel to help reduce food waste and provide meals to those in need.
 
-🎉 **Project Completed: Food Donation Management System** 🍲
+## 🌐 Technologies Used
+- **Frontend**: HTML, CSS, JavaScript
+- **Backend**: PHP
+- **Database**: MySQL
 
-I’m excited to share my recent project – a **Food Donation Management System** built using **HTML, CSS, JavaScript, PHP & MySQL**.
+## 📦 Modules
 
-🔧 **Modules:**
-- **Donor**: Donate food, give feedback  
-- **NGO**: Track donations, view analytics  
-- **Delivery**: Accept and fulfill orders  
+### 1. Donor
+- 📝 Donation Form
+- ✍️ Feedback
 
-🧠 This project was created to connect food donors with NGOs and ensure safe delivery to the needy. It helps reduce food waste and ensures meals reach homeless individuals and charities efficiently.
+### 2. NGO
+- 📊 Analytics Dashboard
+- 📥 View Donations
+- ✍️ Feedback
 
-📂 Tech Stack:  
-`HTML`, `CSS`, `JavaScript`, `PHP`, `MySQL`
+### 3. Delivery
+- 🚚 Take Order
 
-💻 Live Project/Source Code:  
-🔗 GitHub: [github.com/yourusername/food-donation-management](https://github.com/yourusername/food-donation-management)
+## 💡 Features
+- Donors can easily offer surplus food via an online form.
+- NGOs can view donations and analyze food intake statistics.
+- Delivery personnel can take orders and manage food pickup.
+- Feedback system to improve operations.
+- Helps reduce food waste and support local communities.
 
-📈 Outcome:  
-- Simplifies food donation
-- Reduces waste
-- Increases community impact through technology
+## 📷 Screenshots
+_Add screenshots of your web pages here (index page, donor form, NGO dashboard, etc)._
 
-Big thanks to everyone who inspired this!
-
-#webdevelopment #php #mysql #softwaredevelopment #socialimpact #fooddonation #githubproject #studentproject #finalyearproject
-
----
-
-Let me know if you want:
-- A **custom thumbnail/banner** for LinkedIn
-- A **demo video script**
-- Or help in **recording a walk-through video**
-
-Would you like me to generate the actual README file and thumbnails for you now?
+## 🔧 Setup Instructions
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/yourusername/food-donation-management.git
