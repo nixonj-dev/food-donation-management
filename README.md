@@ -36,5 +36,14 @@ _Add screenshots of your web pages here (index page, donor form, NGO dashboard, 
    ```bash
    https://github.com/nixonj-dev/food-donation-management.git
 
-## LinkedIn 
+## 🚀 Author
 
+**Nixon J**  
+[LinkedIn Profile](https://www.linkedin.com/in/nixon-j)  
+
+---
+
+## 🙌 Feedback
+
+Have suggestions or ideas? Feel free to fork, star ⭐, or raise an issue.  
+Let's build and grow together 💪
