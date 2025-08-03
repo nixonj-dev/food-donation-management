@@ -35,3 +35,6 @@ _Add screenshots of your web pages here (index page, donor form, NGO dashboard, 
 1. Clone the repo:
    ```bash
    https://github.com/nixonj-dev/food-donation-management.git
+
+## LinkedIn 
+
